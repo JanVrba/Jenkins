@@ -1,5 +1,8 @@
 pipeline {
-    node {
-        echo 'Hello World'
+    agent any 
+    stages {
+        stage test {
+            echo 'Hello World'
+        }
     }   
 }

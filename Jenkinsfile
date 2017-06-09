@@ -10,7 +10,7 @@ pipeline {
         }
          stage ('test1') {
             steps {                
-                hipchatSend color: 'GREEN', credentialId: '', message:'"${env.JOB_NAME} ${env.BUILD_NUMBER} status: ${currentBuild.result}"'
+                hipchatSend color: 'GREEN', credentialId: '', message:"${env.JOB_NAME} ${env.BUILD_NUMBER} status: ${currentBuild.result}"
             }
         }
     }   

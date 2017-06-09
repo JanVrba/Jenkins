@@ -6,7 +6,7 @@ pipeline {
         stage ('test') {
             steps {
                 echo 'Hello World'
-                hipchatSend color: 'GREEN', credentialId: '', message: hipchatSend '"${env.JOB_NAME} ${env.BUILD_NUMBER} status: ${currentBuild.result}"'
+                hipchatSend color: 'GREEN', credentialId: '', message:'"${env.JOB_NAME} ${env.BUILD_NUMBER} status: ${currentBuild.result}"'
 
             }
         }

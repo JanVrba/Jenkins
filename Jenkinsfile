@@ -11,7 +11,7 @@ pipeline {
     
        stage ('test1') {
              steps {
-                    sh 'ssh jvrba@104.47.153.223 ls'
+                    sh 'ssh jvrba@104.47.153.223 help'
              }
          }     
     }

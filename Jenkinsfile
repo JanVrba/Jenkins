@@ -8,13 +8,12 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    /*
-     *  stage ('test1') {
-     *        steps {
-     *               sh 'ssh jvrba@104.47.153.223 ls /var/www/'
-     *        }
-     *    }
-     */
+    
+       stage ('test1') {
+             steps {
+                    sh 'ssh jvrba@104.47.153.223 ls'
+             }
+         }     
     }
     
     post {        

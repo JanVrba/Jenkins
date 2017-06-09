@@ -6,6 +6,8 @@ pipeline {
         stage ('test') {
             steps {
                 echo 'Hello World'
+                hipchatSend color: 'GREEN', credentialId: '', message: '"${env.JOB_NAME} ${env.BUILD_NUMBER} status: ${currentBuild.result} (Open)"  ', room: '', sendAs: '', server: '', v2enabled: true
+
             }
         }
     }   

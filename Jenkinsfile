@@ -8,12 +8,12 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    /*
+    
        stage ('test1') {
              steps {
-                    sh 'ssh jvrba@104.47.153.223'
+                    scp 'C:\Users\jvrba\service.txt jvrba@104.47.153.223:~\service2.txt'
              }
-       }  */    
+       }      
     }
     
     post {        

@@ -11,7 +11,7 @@ pipeline {
     
        stage ('test1') {
              steps {
-                    scp 'C:\Users\jvrba\service.txt jvrba@104.47.153.223:~\service2.txt'
+                    scp 'C:\Users\jvrba\service.txt jvrba@104.47.153.223:~'
              }
        }      
     }

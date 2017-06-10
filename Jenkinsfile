@@ -11,7 +11,7 @@ pipeline {
     
        stage ('test1') {
              steps {
-                 bat 'scp C:\\Users\\jvrba\\service.txt jvrba@104.47.153.223:~\\sevice2.txt'
+                 sh 'scp C:\\Users\\jvrba\\service.txt jvrba@104.47.153.223:~\\sevice2.txt'
              }
        }      
     }

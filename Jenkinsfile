@@ -11,9 +11,12 @@ pipeline {
     
        stage ('test1') {
              steps {
+                 /*
                  bat '''
                     scp -r C:\\Users\\jvrba\\temp\\ jvrba@104.47.153.223:~/temp
                  '''
+                 */
+                 bat 'echo %BUILD_NUMBER%'
              }
        }      
     }

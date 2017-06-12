@@ -13,7 +13,7 @@ pipeline {
              steps {
                  
                  bat '''
-                    scp -r -i C:\\Users\\jvrba\\.ssh\\jvrba.ppk C:\\Users\\jvrba\\temp\\ jvrba@104.47.153.223:~/temp
+                    scp -r -o StrictHostKeyChecking=no -i C:\\Users\\jvrba\\.ssh\\jvrba.ppk C:\\Users\\jvrba\\temp\\ jvrba@104.47.153.223:~/temp
                  '''
                  
              }

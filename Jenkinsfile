@@ -6,7 +6,7 @@ pipeline {
         stage ('test') {
             steps {
                 bat '''
-                    robot C:\Install\RobotDemo-20160129\RobotDemo\keyword_driven.robot
+                    robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     EXIT /b 0
                     '''            
             }  

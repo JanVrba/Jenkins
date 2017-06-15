@@ -5,19 +5,12 @@ pipeline {
     stages {
         stage ('test') {
             steps {
-                echo 'Hello World'
-            }
-        }
-    
-       stage ('test1') {
-             steps {
-                 
-                 bat '''
-                    scp -r -o StrictHostKeyChecking=no -i C:\\Users\\jvrba\\.ssh\\jvrba.ppk C:\\Users\\jvrba\\temp\\ jvrba@104.47.153.223:~/temp
-                 '''
-                 
-             }
-       }      
+                bat '''
+                    robot C:\Install\RobotDemo-20160129\RobotDemo\keyword_driven.robot
+                    EXIT /b 0
+                    '''            
+            }  
+        }      
     }
     
     post {        

@@ -8,7 +8,10 @@ pipeline {
                 bat '''
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     EXIT /b 0
-                    '''            
+                    '''
+                String template = "My revision is ${SUBVERSION_REVISION} at #${BUILD_NUMBER}"
+                String text = TokenMacro.expand( build, listener, template );
+                System.out.println(text); // something like "My revision is 125 at #12"
             }  
         }      
     }

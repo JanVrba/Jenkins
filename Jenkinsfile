@@ -15,7 +15,8 @@ pipeline {
                    EXIT /b
                    '''   
                 load 'RobotVar.txt'
-                hipchatSend message:"Total: ${ROBOT_TOTAL}, Passed: ${ROBOT_PASSED}, Failed: ${ROBOT_FAILED}"            
+                def message = "<b>Job:</b> ${env.JOB_NAME} , <b>BuildNumber:</b> ${env.BUILD_NUMBER} , <b>status:</b> ${currentBuild.result}, <br /><b>Total:</b> ${ROBOT_TOTAL}, <b>Passed</b>:${ROBOT_PASSED}, <b>Failed:</b>${ROBOT_FAILED}, You can check report here : ${link}"                                      
+                hipchatSend message:$message           
             }  
          }      
     }

@@ -13,7 +13,7 @@ pipeline {
                     '''                    
                // hipchatSend message: '$JOB_NAME ${ROBOT_TOTAL}'              
             }  
-            File file = new File("C:\Program Files (x86)\Jenkins\workspace\TestPipeline\RobotVar.txt")
+            File file = new File("C:\\Program Files (x86)\\Jenkins\\workspace\\TestPipeline\\RobotVar.txt")
             file.eachline { String line ->
                 echo line
             }

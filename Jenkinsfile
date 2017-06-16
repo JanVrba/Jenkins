@@ -11,7 +11,7 @@ pipeline {
                     EXIT /b 0
                    '''
                 bat '''
-                    powershell.exe -command "C:\\Program Files (x86)\\Jenkins\\workspace\\TestPipeline\\robot_variables.ps1"                  
+                    powershell.exe -command "%WORKSPACE%\\robot_variables.ps1"                  
                    EXIT /b
                    '''   
                 load 'RobotVar.txt'                

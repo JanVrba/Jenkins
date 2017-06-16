@@ -14,11 +14,9 @@ pipeline {
                // hipchatSend message: '$JOB_NAME ${ROBOT_TOTAL}' 
               
                 load 'RobotVar.txt'
-                echo "${ROBOT_TOTAL}"
-                }
+                echo "${ROBOT_TOTAL}"               
             }  
-            
-        }      
+         }      
     }
     
    /* post {        

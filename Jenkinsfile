@@ -10,11 +10,9 @@ pipeline {
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     
                     EXIT /b 0
-                    '''                    
-               // hipchatSend message: '$JOB_NAME ${ROBOT_TOTAL}' 
-              
+                   '''                               
                 load 'RobotVar.txt'
-                echo "${ROBOT_TOTAL}"               
+                hipchatSend message:"Total: ${ROBOT_TOTAL}, Passed: ${ROBOT_PASSED}, Failed: ${ROBOT_Failed}"            
             }  
          }      
     }

@@ -10,7 +10,7 @@ pipeline {
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     EXIT /b 0
                     '''  
-                hipchatSend color: 'YELLOW', credentialId: '', message: '${ROBOT_TOTAL} , $ROBOT_TOTAL', room: '', sendAs: '', server: '', v2enabled: true
+                hipchatSend color: 'YELLOW', message: '${ROBOT_TOTAL} , $ROBOT_TOTAL', '${CHANGES_OR_CAUSE}', room: '', sendAs: '', server: '', v2enabled: true
               
             }  
         }      

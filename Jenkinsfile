@@ -10,7 +10,7 @@ pipeline {
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     EXIT /b 0
                     '''  
-                hipchatSend color: 'YELLOW', message: '${ROBOT_TOTAL} , $ROBOT_TOTAL', '${CHANGES_OR_CAUSE}'              
+                hipchatSend color: 'YELLOW', message: '${ROBOT_TOTAL} , $ROBOT_TOTAL, ${CHANGES_OR_CAUSE}'              
             }  
         }      
     }

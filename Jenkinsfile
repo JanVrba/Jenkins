@@ -12,7 +12,7 @@ pipeline {
                     EXIT /b 0
                    '''                               
                 load 'RobotVar.txt'
-                hipchatSend message:"Total: ${ROBOT_TOTAL}, Passed: ${ROBOT_PASSED}, Failed: ${ROBOT_Failed}"            
+                hipchatSend message:"Total: ${ROBOT_TOTAL}, Passed: ${ROBOT_PASSED}, Failed: ${ROBOT_FAILED}"            
             }  
          }      
     }

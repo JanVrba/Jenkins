@@ -14,9 +14,8 @@ pipeline {
                     powershell.exe -command "C:\\Program Files (x86)\\Jenkins\\workspace\\TestPipeline\\robot_variables.ps1"                  
                    EXIT /b
                    '''   
-                load 'RobotVar.txt'
-                def message = "<b>Job:</b> ${env.JOB_NAME} , <b>BuildNumber:</b> ${env.BUILD_NUMBER} , <b>status:</b> ${currentBuild.result}, <br /><b>Total:</b> ${ROBOT_TOTAL}, <b>Passed</b>:${ROBOT_PASSED}, <b>Failed:</b>${ROBOT_FAILED}, You can check report here : ${link}"                                      
-                hipchatSend message:$message           
+                load 'RobotVar.txt'                
+                hipchatSend message: "<b>Job:</b> ${env.JOB_NAME} , <b>BuildNumber:</b> ${env.BUILD_NUMBER} , <b>status:</b> ${currentBuild.result}, <br /><b>Total:</b> ${ROBOT_TOTAL}, <b>Passed</b>:${ROBOT_PASSED}, <b>Failed:</b>${ROBOT_FAILED}, You can check report here : ${link}"           
             }  
          }      
     }

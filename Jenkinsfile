@@ -13,7 +13,7 @@ pipeline {
                     '''                    
                // hipchatSend message: '$JOB_NAME ${ROBOT_TOTAL}' 
               
-                load 'RobotVar.txt'
+                load 'RobotVar.groovy'
                 echo "${ROBOT_TOTAL}"               
             }  
          }      

@@ -10,7 +10,7 @@ pipeline {
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot
                     EXIT /b 0
                     '''  
-                hipchatSend: message: "${env.JOB_NAME}"              
+                hipchatSend: message: '${env.JOB_NAME}'              
             }  
         }      
     }

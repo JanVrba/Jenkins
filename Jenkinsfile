@@ -16,7 +16,8 @@ pipeline {
                    '''   
                 load 'RobotVar.txt'   
                 load 'Robotest.txt'  
-
+                echo ${ROBOT_TESTS}
+                
                 hipchatSend message: """
                 <b>Job:</b> ${env.JOB_NAME} , 
                 <b>BuildNumber:</b> ${env.BUILD_NUMBER} , 
@@ -25,7 +26,7 @@ pipeline {
                 <b>Passed</b>:${ROBOT_PASSED}, 
                 <b>Failed:</b>${ROBOT_FAILED}, 
                 You can check report here : link,<br />
-                ${ROBOT_TESTS.split(",")}
+                ${ROBOT_TESTS}
                 """           
             }  
          }      

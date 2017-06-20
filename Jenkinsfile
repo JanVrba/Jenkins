@@ -1,18 +1,5 @@
 #!/usr/bin/env groovy
 
- def ROBOT_TESTS = """
-                1 Customer Information : Add new jobsite request : FAIL \n
- 1 Customer Information : Verify new jobsite request was created : FAIL \n
- 3 Orders Product Catalog : ORDER REQUEST - HappyPATH : FAIL,
- 3 Orders Product Catalog : ORDER REQUEST - Repeat : FAIL,
- 3 Orders Product Catalog : ORDER REQUEST - Draft Delete : FAIL,
- 3 Orders Product Catalog : PP HappyPath : FAIL,
- 3 Orders Product Catalog : Delete Project Profile : FAIL,
- 4 Delivery Schedule : Basic Display : PASS,
- 4 Delivery Schedule : Import valid excel file : PASS,
- 4 Delivery Schedule : Import excel file with invalid Material type : FAIL,
- """
-
 pipeline {
     agent any   
     
@@ -27,7 +14,8 @@ pipeline {
                    powershell.exe -command '%WORKSPACE%\\robot_variables.ps1'                  
                    EXIT /b
                    '''   
-                load 'RobotVar.txt'               
+                load 'RobotVar.txt'   
+                load 'Robotest.txt'  
 
                 hipchatSend message: """
                 <b>Job:</b> ${env.JOB_NAME} , 

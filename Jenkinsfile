@@ -16,7 +16,7 @@ pipeline {
                    '''   
                 load 'RobotVar.txt'   
                 load 'Robotest.txt'  
-                echo "${ROBOT_TESTS}"
+                // echo "${ROBOT_TESTS}"
                 
                 hipchatSend message: """
                 <b>Job:</b> ${env.JOB_NAME} , 

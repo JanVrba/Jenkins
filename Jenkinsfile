@@ -37,7 +37,7 @@ pipeline {
                 <b>Passed</b>:${ROBOT_PASSED}, 
                 <b>Failed:</b>${ROBOT_FAILED}, 
                 You can check report here : link,<br />
-                ${ROBOT_TESTS}
+                ${ROBOT_TESTS}.split(",")
                 """           
             }  
          }      

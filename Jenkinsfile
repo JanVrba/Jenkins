@@ -1,21 +1,6 @@
 #!/usr/bin/env groovy
 
-pipeline {
-    agent any   
-    
-    stages {
-        stage ('test') {
-            steps {
-                bat '''
-                    robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot                    
-                    EXIT /b 0
-                   '''
-                bat '''
-                    powershell.exe -command '%WORKSPACE%\\robot_variables.ps1'                  
-                   EXIT /b
-                   '''   
-                load 'RobotVar.txt' 
-                ROBOT_TESTS = """
+ def ROBOT_TESTS = """
                 1 Customer Information : Add new jobsite request : FAIL,
  1 Customer Information : Verify new jobsite request was created : FAIL,
  3 Orders Product Catalog : ORDER REQUEST - HappyPATH : FAIL,
@@ -28,6 +13,21 @@ pipeline {
  4 Delivery Schedule : Import excel file with invalid Material type : FAIL,
  """
 
+pipeline {
+    agent any   
+    
+    stages {
+        stage ('test') {
+            steps {
+                bat '''
+                    robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot                    
+                    EXIT /b 0
+                   '''
+                bat '''
+                   powershell.exe -command '%WORKSPACE%\\robot_variables.ps1'                  
+                   EXIT /b
+                   '''   
+                load 'RobotVar.txt'               
 
                 hipchatSend message: """
                 <b>Job:</b> ${env.JOB_NAME} , 

@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
  def ROBOT_TESTS = """
-                1 Customer Information : Add new jobsite request : FAIL,
- 1 Customer Information : Verify new jobsite request was created : FAIL,
+                1 Customer Information : Add new jobsite request : FAIL \n
+ 1 Customer Information : Verify new jobsite request was created : FAIL \n
  3 Orders Product Catalog : ORDER REQUEST - HappyPATH : FAIL,
  3 Orders Product Catalog : ORDER REQUEST - Repeat : FAIL,
  3 Orders Product Catalog : ORDER REQUEST - Draft Delete : FAIL,
@@ -12,8 +12,6 @@
  4 Delivery Schedule : Import valid excel file : PASS,
  4 Delivery Schedule : Import excel file with invalid Material type : FAIL,
  """
-
-ROBOT_TESTS = ROBOT_TESTS.split(",")
 
 pipeline {
     agent any   
@@ -39,7 +37,7 @@ pipeline {
                 <b>Passed</b>:${ROBOT_PASSED}, 
                 <b>Failed:</b>${ROBOT_FAILED}, 
                 You can check report here : link,<br />
-                ${ROBOT_TESTS}.split(",")
+                ${ROBOT_TESTS}
                 """           
             }  
          }      

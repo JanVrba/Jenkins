@@ -15,8 +15,7 @@ pipeline {
                    EXIT /b
                    '''   
                 load 'RobotVar.txt'   
-                load 'Robotest.txt'  
-                // echo "${ROBOT_TESTS}"
+                load 'Robotest.txt'            
                 
                 hipchatSend message: """
                 <b>Job:</b> ${env.JOB_NAME} , 

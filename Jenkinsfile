@@ -13,6 +13,8 @@
  4 Delivery Schedule : Import excel file with invalid Material type : FAIL,
  """
 
+ROBOT_TESTS = ROBOT_TESTS.split(",")
+
 pipeline {
     agent any   
     

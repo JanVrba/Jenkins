@@ -15,7 +15,15 @@ pipeline {
                    EXIT /b
                    '''   
                 load 'RobotVar.txt'                
-                hipchatSend message: "<b>Job:</b> ${env.JOB_NAME} , <b>BuildNumber:</b> ${env.BUILD_NUMBER} , <b>status:</b> ${currentBuild.result}, <br /><b>Total:</b> ${ROBOT_TOTAL}, <b>Passed</b>:${ROBOT_PASSED}, <b>Failed:</b>${ROBOT_FAILED}, You can check report here : link"           
+                hipchatSend message: """
+                <b>Job:</b> ${env.JOB_NAME} , 
+                <b>BuildNumber:</b> ${env.BUILD_NUMBER} , 
+                <b>status:</b> ${currentBuild.result}, 
+                <br /><b>Total:</b> ${ROBOT_TOTAL}, 
+                <b>Passed</b>:${ROBOT_PASSED}, 
+                <b>Failed:</b>${ROBOT_FAILED}, 
+                You can check report here : link
+                """           
             }  
          }      
     }

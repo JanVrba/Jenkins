@@ -1,2 +1,2 @@
-workspace = "%WORKSPACE%\4_Delivery_Schedule\API\Regression"
-environment = workspace + "\Development.postman_environment.json" 
+workspace = "%WORKSPACE%/4_Delivery_Schedule/API/Regression"
+environment = workspace + "/Development.postman_environment.json" 

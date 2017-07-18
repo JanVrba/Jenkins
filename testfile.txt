@@ -1,1 +1,6 @@
-hello = "HelloWorld"
+tests=[
+    "baalalslslal",
+    "sfasfasassag",
+    "asfasgasgaa",
+    "asfasf"
+]

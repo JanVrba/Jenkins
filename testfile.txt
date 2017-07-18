@@ -1,6 +1,6 @@
-workspace = "%WORKSPACE%/4_Delivery_Schedule/API/Regression"
-environment = workspace + "/Development.postman_environment.json"
-reporters = workspace + /NewmanResults
+workspace_P4 = "%WORKSPACE%/4_Delivery_Schedule/API/Regression"
+environment = workspace_P4 + "/Development.postman_environment.json"
+reporters = %WORKSPACE% + "/NewmanResults"
 tests = [
-  "DeliveryScheduleTests/Create_and_Update_Tests.postman_collection.json 
+  "DeliveryScheduleTests/Create_and_Update_Tests.postman_collection.json"  
 ]

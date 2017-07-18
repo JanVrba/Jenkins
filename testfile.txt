@@ -1,4 +1,6 @@
+no = "notototo"
 tests=[
+     no,
     "baalalslslal",
     "sfasfasassag",
     "asfasgasgaa",

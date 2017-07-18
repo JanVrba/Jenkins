@@ -1,1 +1,1 @@
-
+def hello = "HelloWorld"

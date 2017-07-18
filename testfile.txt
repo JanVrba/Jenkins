@@ -1,8 +1,2 @@
-no = "notototo"
-tests=[
-     no,
-    "baalalslslal",
-    "sfasfasassag",
-    "asfasgasgaa",
-    "asfasf"
-]
+workspace = "%WORKSPACE%\4_Delivery_Schedule\API\Regression"
+environment = workspace + "\Development.postman_environment.json" 

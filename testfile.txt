@@ -1,10 +1,22 @@
-/*
-blkafkkalsfklas
+// PRODUCT LIST
 
-*/
-workspace_P4 = "%WORKSPACE%/4_Delivery_Schedule/API/Regression"
-environment = workspace_P4 + "/Development.postman_environment.json"
-reporters = "%WORKSPACE%/NewmanResults"
+P1 = "1_Customer_Information"
+P2 = "2_Quotation_Pricing"
+P3 = "3_Orders_Product_Catalog"
+P4 = "4_Delivery_Schedule"
+P5 = "5_Track_Trace"
+P6 = "6_Drivers"
+P7 = "7_Invoice_Dispute"
+P8 = "8_Payments"
+
+// variables per product and environment
+
+product = P4
+prodfolder = "%WORKSPACE%/" + product + "/API/Regression"
+// environment = workspace_P4 + "/Development.postman_environment.json"
+// reporters = %WORKSPACE% + "/NewmanResults"
+/* 
 tests = [
   "DeliveryScheduleTests/Create_and_Update_Tests.postman_collection.json"  
 ]
+*/

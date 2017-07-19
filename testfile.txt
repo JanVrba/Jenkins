@@ -14,7 +14,7 @@ P8 = "8_Payments"
 product = P4
 prodfolder = "%WORKSPACE%/" + product + "/API/Regression"
 environment = prodfolder + "/Development.postman_environment.json"
-// reporters = %WORKSPACE% + "/NewmanResults"
+reporters = "%WORKSPACE%" + "/NewmanResults"
 /* 
 tests = [
   "DeliveryScheduleTests/Create_and_Update_Tests.postman_collection.json"  

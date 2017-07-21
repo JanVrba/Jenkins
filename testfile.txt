@@ -8,15 +8,15 @@ P5 = "5_Track_Trace"
 P6 = "6_Drivers"
 P7 = "7_Invoice_Dispute"
 P8 = "8_Payments"
+P9 = "TestFolder"
 
 // variables per product and environment
 
-product = P4
-prodfolder = "%WORKSPACE%/" + product + "/API/Regression"
+product = P9
+prodfolder = "%WORKSPACE%/" + product
 environment = prodfolder + "/Development.postman_environment.json"
 reporters = "%WORKSPACE%" + "/NewmanResults"
 
 tests = [
-  "/DeliveryScheduleTests/Create_and_Update_Tests.postman_collection.json",
-  "/DeliveryScheduleTests/Delete_Tests.postman_collection.json"
+  "TestColl.postman_collection.json" 
 ]

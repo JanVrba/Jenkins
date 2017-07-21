@@ -18,5 +18,5 @@ environment = prodfolder + "/Development.postman_environment.json"
 reporters = "%WORKSPACE%" + "/NewmanResults"
 
 tests = [
-  "TestColl.postman_collection.json" 
+  "\\TestColl.postman_collection.json" 
 ]

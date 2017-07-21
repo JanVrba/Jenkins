@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TestColl",
+		"_postman_id": "dc2c070b-0c8a-f2c1-9baf-fa49a977931e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postman-echo.com/get",
+			"request": {
+				"url": "postman-echo.com/get",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

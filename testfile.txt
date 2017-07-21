@@ -13,7 +13,7 @@ P9 = "TestFolder"
 // variables per product and environment
 
 product = P9
-prodfolder = "%WORKSPACE%\" + product
+prodfolder = "%WORKSPACE%\\" + product
 environment = prodfolder + "/Development.postman_environment.json"
 reporters = "%WORKSPACE%" + "/NewmanResults"
 

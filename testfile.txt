@@ -14,7 +14,7 @@ P9 = "TestFolder"
 
 product = P9
 prodfolder = "%WORKSPACE%\\" + product
-environment = prodfolder + "/Develsopment.postman_environment.json"
+environment = prodfolder + "/Deveopment.postman_environment.json"
 reporters = "%WORKSPACE%" + "/NewmanResults"
 
 tests = [

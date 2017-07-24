@@ -10,7 +10,7 @@ pipeline {
                     robot C:\\Install\\RobotDemo-20160129\\RobotDemo\\keyword_driven.robot                    
                     EXIT /b 0
                    '''
-                bat '''
+               /*  bat '''
                    powershell.exe -command '%WORKSPACE%\\robot_variables.ps1'                  
                    EXIT /b
                    '''   
@@ -28,6 +28,7 @@ pipeline {
                 You can check report here : link,<br />
                 ${ROBOT_TESTS}
                 """           
+                */
             }  
          }      
     }

@@ -18,7 +18,7 @@ pipeline {
 
     stages {
         /*
-        stage('PullScript') {
+'        stage('PullScript') {
             steps {             
                 checkout poll: false, 
                 scm: [$class: 'GitSCM', 
@@ -86,7 +86,7 @@ pipeline {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
                 bat '''
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command '%WORKSPACE%\\robot_variables.ps1'
+                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command '%WORKSPACE%'\\robot_variables.ps1
                         EXIT /b
                     '''                                
             }      

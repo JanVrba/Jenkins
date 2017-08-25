@@ -82,9 +82,7 @@ pipeline {
         stage('Send Hipchat message') {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
-                bat '''                        
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command C:\\\\Temp\\\\robot_variables.ps1                        
-                    '''                                
+                powershell 'C:\\Temp\\robot_variables.ps1'                                                   
             }      
         }               
                         

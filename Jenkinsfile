@@ -90,7 +90,7 @@ pipeline {
         stage('Send Hipchat message') {
             steps{
                 echo "Getting ROBOTFW variables from output file..."
-                script {                    
+                /* script {                    
 
                     // def parser = new XmlParser()
                     // def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")
@@ -129,7 +129,8 @@ pipeline {
                     file.append "\n" + "total=" + total
 
                 } 
-
+                */
+                load 'C:\Temp\robovariables.groovy'
             }
         }
     }    

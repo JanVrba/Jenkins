@@ -1,5 +1,10 @@
 #!/usr/bin/env groovy
 
+@NonCPS
+groovy.util.Node getParser(path) {
+    new XmlParser().parseText(readFile(path))
+}
+
 import org.json.JSONObject
 import groovy.xml.MarkupBuilder 
 import groovy.util.XmlParser

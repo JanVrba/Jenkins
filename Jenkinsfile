@@ -35,7 +35,7 @@ pipeline {
             }
         }
 
-        stage('Execute Scripts') {
+'        stage('Execute Scripts') {'
             steps {  
                 echo "Start Automated Testing"
                 withCredentials([usernamePassword(credentialsId: '92fba331-6458-46b6-bf34-c9ed89d358b2', passwordVariable: 'DB_PASSWORD', usernameVariable: 'DB_USER')]) {
@@ -86,7 +86,7 @@ pipeline {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
                 bat '''
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command %WORKSPACE%\\robot_variables.ps1                  
+                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command '%WORKSPACE%\\robot_variables.ps1'
                         EXIT /b
                     '''                                
             }      

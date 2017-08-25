@@ -4,8 +4,8 @@ import org.json.JSONObject
 import groovy.xml.MarkupBuilder 
 import groovy.util.XmlParser
 
-// @NonCPS
-// org.jenkinsci.plugins.permissivescriptsecurity.PermissiveWhitelist.enabled=true
+@NonCPS
+System.setProperty("org.jenkinsci.plugins.permissivescriptsecurity.PermissiveWhitelist.enabled","true")
 
 pipeline {
     environment {

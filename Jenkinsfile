@@ -82,7 +82,7 @@ pipeline {
         stage('Send Hipchat message') {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
-                powershell 'C:\\Temp\\robot_variables.ps1'                                                   
+                powershell returnStdout: true, script: 'C:\\Temp\\robot_variables.ps1'                                                 
             }      
         }               
                         

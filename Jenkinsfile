@@ -91,7 +91,7 @@ pipeline {
                 script {                    
 
                     def parser = new XmlParser()
-                    def doc = getParser("${env.WORKSPACE}/Results/output.xml")                    
+                    def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")                    
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass
                     fail = fail.toInteger()

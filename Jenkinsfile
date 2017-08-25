@@ -5,18 +5,7 @@ import groovy.xml.MarkupBuilder
 import groovy.util.XmlParser
 
 @NonCPS
-def getParser(path) {
-    def parser = new XmlParser()
-    def doc = parser.parse(path)  
-    
-    fail = doc.statistics.total.stat[1].attributes().fail
-    pass = doc.statistics.total.stat[1].attributes().pass
-    fail = fail.toInteger()
-    pass = pass.toInteger()
-    total = fail + pass
-}
-
-
+org.jenkinsci.plugins.permissivescriptsecurity.PermissiveWhitelist.enabled=true
 
 pipeline {
     environment {
@@ -101,9 +90,8 @@ pipeline {
                 echo "Getting ROBOTFW variables from output file..."
                 script {                    
 
-                    //def parser = new XmlParser()
-                    //def doc = getParser("${env.WORKSPACE}/Results/output.xml")
-                    /* groovy.util.Node doc = getParser("${env.WORKSPACE}/Results/output.xml")
+                    def parser = new XmlParser()
+                    def doc = getParser("${env.WORKSPACE}/Results/output.xml")                    
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass
                     fail = fail.toInteger()
@@ -136,7 +124,7 @@ pipeline {
                     file.append "\n" + "fail=" + fail
                     file.append "\n" + "pass=" + pass
                     file.append "\n" + "total=" + total
-                */
+                
                 } 
                 
                 

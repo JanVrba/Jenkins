@@ -1,4 +1,3 @@
-
 #!/usr/bin/env groovy
 
 import org.json.JSONObject

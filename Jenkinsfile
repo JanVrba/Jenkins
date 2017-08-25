@@ -92,8 +92,9 @@ pipeline {
                 echo "Getting ROBOTFW variables from output file..."
                 script {                    
 
-                    def parser = new XmlParser()
-                    def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")
+                    // def parser = new XmlParser()
+                    // def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")
+                    groovy.util.Node doc = getParser("${env.WORKSPACE}/Results/output.xml")
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass
                     fail = fail.toInteger()

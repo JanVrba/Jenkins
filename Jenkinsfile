@@ -41,8 +41,7 @@ pipeline {
                     bat '''
                         call robot --removeKeywords name:DatabaseLibrary.connect* -i Regression -e Perfecto -e iOS -e Android -d Results ./
                         EXIT /B 0
-                    '''
-                }
+                    '                }
             }
 
         }
@@ -84,9 +83,8 @@ pipeline {
         stage('Send Hipchat message') {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
-                bat '''
-                        SET cmnd = '%WORKSPACE%' 
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command %cmnd%/robot_variables.ps1
+                bat '''                        
+                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command C:/Temp/robot_variables.ps1
                         EXIT /b
                     '''                                
             }      

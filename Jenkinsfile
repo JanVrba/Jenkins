@@ -10,7 +10,7 @@ pipeline {
         // bitbucket settings  
         def branchName = "master"
         def repoName = "dcmqa_ta"
-        def wrkspc = "${env.WORKSPACE}"
+        // def wrkspc = "${env.WORKSPACE}"
 
     }
 
@@ -88,7 +88,7 @@ pipeline {
                 script {                    
 
                     def parser = new XmlParser()
-                    def doc = parser.parse("${wrkspc}/Results/output.xml")
+                    def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass
                     fail = fail.toInteger()

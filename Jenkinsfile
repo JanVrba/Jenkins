@@ -1,13 +1,23 @@
-#!/usr/bin/env groovy
 
-@NonCPS
-groovy.util.Node getParser(path) {
-    new XmlParser().parse(path)    
-}
+#!/usr/bin/env groovy
 
 import org.json.JSONObject
 import groovy.xml.MarkupBuilder 
 import groovy.util.XmlParser
+
+@NonCPS
+def getParser(path) {
+    def parser = new XmlParser()
+    def doc = parser.parse(path)  
+    
+    fail = doc.statistics.total.stat[1].attributes().fail
+    pass = doc.statistics.total.stat[1].attributes().pass
+    fail = fail.toInteger()
+    pass = pass.toInteger()
+    total = fail + pass
+}
+
+
 
 pipeline {
     environment {
@@ -92,9 +102,9 @@ pipeline {
                 echo "Getting ROBOTFW variables from output file..."
                 script {                    
 
-                    def parser = new XmlParser()
-                    def doc = parser.parse("${env.WORKSPACE}/Results/output.xml")
-                    // groovy.util.Node doc = getParser("${env.WORKSPACE}/Results/output.xml")
+                    //def parser = new XmlParser()
+                    def doc = getParser("${env.WORKSPACE}/Results/output.xml")
+                    /* groovy.util.Node doc = getParser("${env.WORKSPACE}/Results/output.xml")
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass
                     fail = fail.toInteger()
@@ -127,7 +137,7 @@ pipeline {
                     file.append "\n" + "fail=" + fail
                     file.append "\n" + "pass=" + pass
                     file.append "\n" + "total=" + total
-
+                */
                 } 
                 
                 

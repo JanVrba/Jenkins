@@ -2,7 +2,7 @@
 
 @NonCPS
 groovy.util.Node getParser(path) {
-    new XmlParser().parseText(readFile(path))
+    new XmlParser().parse(path)    
 }
 
 import org.json.JSONObject

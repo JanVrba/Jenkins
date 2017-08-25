@@ -23,8 +23,7 @@ pipeline {
                 checkout poll: false, 
                 scm: [$class: 'GitSCM', 
                     branches: [[name: "*" + branchName]], 
-                    doGenerateSubmoduleConfigurations: false, 
-                    extensions: [[$class: 'CloneOption', 
+                    doGenerateSubmoduleConfigurations: false,                     extensions: [[$class: 'CloneOption', 
                                                 depth: 0, 
                                                 noTags: false, 
                                                 reference: '', 
@@ -86,7 +85,8 @@ pipeline {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
                 bat '''
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command '%WORKSPACE%'\\robot_variables.ps1
+                        SET cmnd = '%WORKSPACE%' + '\\robot_variables.ps1'
+                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command %cmnd%
                         EXIT /b
                     '''                                
             }      

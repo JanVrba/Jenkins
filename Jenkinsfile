@@ -65,7 +65,7 @@ pipeline {
         stage('Publish RobotFW results') {
             steps {
                 echo "Start publishing RobotFW results"
-                step([$class : 'RobotPublisher',
+//                 step([$class : 'RobotPublisher',
                         outputPath : "${WORKSPACE}/Results",
                         outputFileName : "*.xml",
                         disableArchiveOutput : false,
@@ -102,7 +102,7 @@ pipeline {
                 script {                    
 
                     //def parser = new XmlParser()
-                    def doc = getParser("${env.WORKSPACE}/Results/output.xml")
+                    //def doc = getParser("${env.WORKSPACE}/Results/output.xml")
                     /* groovy.util.Node doc = getParser("${env.WORKSPACE}/Results/output.xml")
                     fail = doc.statistics.total.stat[1].attributes().fail
                     pass = doc.statistics.total.stat[1].attributes().pass

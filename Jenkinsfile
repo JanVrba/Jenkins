@@ -130,7 +130,7 @@ pipeline {
 
                 } 
                 */
-                load 'C:\Temp\robovariables.groovy'
+                load 'C:\\Temp\\robovariables.groovy'
             }
         }
     }    

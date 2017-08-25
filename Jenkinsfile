@@ -2,7 +2,7 @@
 
 import org.json.JSONObject
 import groovy.xml.MarkupBuilder 
-import groovy.util.*
+import groovy.util.XmlParser
 
 pipeline {
     environment {

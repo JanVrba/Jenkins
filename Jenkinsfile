@@ -85,8 +85,8 @@ pipeline {
             steps   {
                 echo "Getting ROBOTFW variables from output file..."
                 bat '''
-                        SET cmnd = '%WORKSPACE%' + '\\robot_variables.ps1'
-                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command %cmnd%
+                        SET cmnd = '%WORKSPACE%' 
+                        powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command %cmnd%\\robot_variables.ps1
                         EXIT /b
                     '''                                
             }      

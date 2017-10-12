@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat
 
 pipeline {    
 
-    agent { label 'bigmac2' } 
+    agent any     
 
     stages { 
 

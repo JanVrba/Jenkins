@@ -13,7 +13,9 @@ pipeline {
 
             steps {
 
-                script {
+                echo "HELLO"
+
+                /*script {
 
                     def branches = [
                     "master",
@@ -58,7 +60,8 @@ pipeline {
                             }
                         }
                     }   
-                }  
+                } 
+                */ 
             }
         }  
     } 

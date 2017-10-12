@@ -1,0 +1,65 @@
+#!/bin/groovy
+import groovy.time.*
+import org.json.JSONObject
+import java.text.SimpleDateFormat
+
+pipeline {    
+
+    agent { label 'bigmac2' } 
+
+    stages { 
+
+        stage('Preparation'){
+
+            steps {
+
+                script {
+
+                    def branches = [
+                    "master",
+                    "release-prd",
+                    "release-pre",
+                    "release-qa",
+                    "development"
+                    ]     
+
+                    TimeZone.setDefault(TimeZone.getTimeZone('UTC'))
+                    Date timeNow = new Date()
+
+                    for (int i = 0; i < branches.size(); i++){
+                        def branch = branches[i]
+                        withCredentials([
+                            usernamePassword(credentialsId: '2ac4ae14-9741-469b-892e-0ab81123ce6c', 
+                            passwordVariable: 'BITBUCKET_PASSWORD', 
+                            usernameVariable: 'BITBUCKET_USER')
+                        ]) {
+                    
+                            sh """
+                                rm -f branchResult.json
+                                curl -X GET -u $BITBUCKET_USER:$BITBUCKET_PASSWORD https://api.bitbucket.org/2.0/repositories/cemex/$repo_slug/refs/branches/$branch -o branchResult.json
+                            """    
+                            def branchInfo = readJSON file: 'branchResult.json'  
+
+                            echo "" + branchInfo.size()  
+
+                            if (branchInfo.size() > 2) { 
+
+                                // Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])  
+                                Date timeMerge = new SimpleDateFormat('yyyy-MM-dd' + 'T' + 'HH:mm:ss').parse(branchInfo["target"]["date"]).format('yyyy-MM-ddHH:mm:ss')
+                                TimeDuration duration = TimeCategory.minus(timeNow, timeMerge) 
+
+                                if (duration.toMilliseconds() < 300000) { //Less than 5 minutes
+                                    echo "Building JOB " + "$project_key/$job_name " + branch
+                                    // build job: "$project_key/$job_name", parameters: [string(name: 'branch', value: branch)], wait: false
+                                    break
+                                } else {
+                                    println "Not building " + branch + " last time updated was " + duration.toMilliseconds()/60000 + " mins ago."
+                                }
+                            }
+                        }
+                    }   
+                }  
+            }
+        }  
+    } 
+}

@@ -42,6 +42,12 @@ pipeline {
                             echo "${timeMerge}"
                             TimeDuration duration = TimeCategory.minus(timeNow, timeMerge) 
                             echo "${duration}"
+                            if (duration.toMilliseconds() < 300000) { //Less than 5 minutes
+                                echo "Building JOB " + "$project_key/$job_name " + branch
+                                break
+                            } else {
+                                println "Not building " + branch + " last time updated was " + duration.toMilliseconds()/60000 + " mins ago."
+                            }
                         }
                     }
                 }
@@ -75,12 +81,12 @@ pipeline {
                                 
                                 
 
-                                if (duration.toMilliseconds() < 300000) { //Less than 5 minutes
-                                    echo "Building JOB " + "$project_key/$job_name " + branch
+                                
+                                    
                                     // build job: "$project_key/$job_name", parameters: [string(name: 'branch', value: branch)], wait: false
-                                    break
-                                } else {
-                                    println "Not building " + branch + " last time updated was " + duration.toMilliseconds()/60000 + " mins ago."
+                                    
+                                
+                                    
                                 }
                             }
                         }

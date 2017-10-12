@@ -46,7 +46,8 @@ pipeline {
                                 echo "Building JOB " + "$project_key/$job_name " + branch
                                 break
                             } else {
-                                println "Not building " + branch + " last time updated was " + duration.toMilliseconds()/60000 + " mins ago."
+                                // println "Not building " + branch + " last time updated was " + duration.toMilliseconds()/60000 + " mins ago."
+                                println "Not building " + branch + " last time updated was " + duration + " ago."
                             }
                         }
                     }

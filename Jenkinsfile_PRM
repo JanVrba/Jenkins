@@ -39,8 +39,14 @@ pipeline {
                             Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])
                         }
                     }
+                }
+            }
+        }  
+    } 
+}
 
-                    /*
+
+/*
 
                     
                         
@@ -76,7 +82,3 @@ pipeline {
                     }   
                 } 
                 */ 
-            }
-        }  
-    } 
-}

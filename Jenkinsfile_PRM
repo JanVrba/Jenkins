@@ -27,12 +27,23 @@ pipeline {
 
                     TimeZone.setDefault(TimeZone.getTimeZone('UTC'))
                     Date timeNow = new Date()
-                }
-
-                    /*
 
                     for (int i = 0; i < branches.size(); i++){
                         def branch = branches[i]
+                        echo branch
+                        def branchInfo = readJSON file: 'branchResult.json' 
+
+                        echo "" + branchInfo.size() 
+
+                        if (branchInfo.size() > 2) {  
+                            Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])
+                        }
+                    }
+
+                    /*
+
+                    
+                        
                         withCredentials([
                             usernamePassword(credentialsId: '2ac4ae14-9741-469b-892e-0ab81123ce6c', 
                             passwordVariable: 'BITBUCKET_PASSWORD', 
@@ -43,13 +54,13 @@ pipeline {
                                 rm -f branchResult.json
                                 curl -X GET -u $BITBUCKET_USER:$BITBUCKET_PASSWORD https://api.bitbucket.org/2.0/repositories/cemex/$repo_slug/refs/branches/$branch -o branchResult.json
                             """    
-                            def branchInfo = readJSON file: 'branchResult.json'  
+                            
 
-                            echo "" + branchInfo.size()  
+                            
 
-                            if (branchInfo.size() > 2) { 
+                            
 
-                                // Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])  
+                                //   
                                 Date timeMerge = new SimpleDateFormat('yyyy-MM-dd' + 'T' + 'HH:mm:ss').parse(branchInfo["target"]["date"]).format('yyyy-MM-ddHH:mm:ss')
                                 TimeDuration duration = TimeCategory.minus(timeNow, timeMerge) 
 

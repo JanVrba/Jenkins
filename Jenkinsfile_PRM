@@ -36,7 +36,9 @@ pipeline {
                         echo "" + branchInfo.size() 
 
                         if (branchInfo.size() > 2) {  
-                            Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])
+                            // Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])
+                            // Date timeMerge = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(branchInfo["target"]["date"]).format('yyyy-MM-ddHH:mm:ss')
+                            Date timeMerge = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(branchInfo["target"]["date"])
                         }
                     }
                 }
@@ -67,7 +69,7 @@ pipeline {
                             
 
                                 //   
-                                Date timeMerge = new SimpleDateFormat('yyyy-MM-dd' + 'T' + 'HH:mm:ss').parse(branchInfo["target"]["date"]).format('yyyy-MM-ddHH:mm:ss')
+                                
                                 TimeDuration duration = TimeCategory.minus(timeNow, timeMerge) 
 
                                 if (duration.toMilliseconds() < 300000) { //Less than 5 minutes

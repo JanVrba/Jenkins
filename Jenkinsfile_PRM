@@ -39,7 +39,7 @@ pipeline {
                             // Date timeMerge = Date.parse("yyyy-MM-dd'T'HH:mm:ss", branchInfo["target"]["date"])
                             // Date timeMerge = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(branchInfo["target"]["date"]).format('yyyy-MM-ddHH:mm:ss')
                             Date timeMerge = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(branchInfo["target"]["date"])
-                            echo timeMerge
+                            echo "${timeMerge}"
                         }
                     }
                 }

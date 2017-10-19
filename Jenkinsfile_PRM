@@ -12,13 +12,27 @@ pipeline {
         stage('Preparation'){
 
             when {
-                expression { currentBuild.currentResult == "UNSTABLE" }
+                expression { currentBuild.currentResult == "SUCCESS" }
             }
 
-            steps {
-                echo "CurrentBuild Current Result: " + currentBuild.currentResult   
-                echo "HELLO"             
+                steps {
+                    echo "CurrentBuild Current Result: " + currentBuild.currentResult   
+                    echo "HELLO FROM PREPARTION STAGE"             
+                }
+        } 
+
+        when {
+                expression { currentBuild.currentResult == "SUCCESS" }
+        } 
+
+            stage('Test'){
+                
+                steps {
+
+                    echo "CurrentBuild Current Result: " + currentBuild.currentResult   
+                    echo "HELLO FROM TEST STAGE"
+
+                }
             }
-        }  
     } 
 }

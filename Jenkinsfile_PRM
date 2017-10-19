@@ -11,9 +11,13 @@ pipeline {
 
         stage('Preparation'){
 
+            when {
+                expression { currentBuild.currentResult == "SUCCESS" }
+            }
+
             steps {
 
-                echo "HELLO"                
+                echo "HELLO"             
             }
         }  
     } 

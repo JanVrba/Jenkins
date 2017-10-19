@@ -12,7 +12,7 @@ pipeline {
         stage('Preparation'){
 
             when {
-                expression { currentBuild.currentResult("UNSTABLE") == false }                
+                expression { currentBuild.currentResult.equals("UNSTABLE") == false }                
             }
 
                 steps {
@@ -24,7 +24,7 @@ pipeline {
         stage('Test'){
                 
             when {
-                    expression { currentBuild.currentResult("UNSTABLE") == false }   
+                    expression { currentBuild.currentResult.equals("UNSTABLE") == false }   
             }                 
                 steps {
                     

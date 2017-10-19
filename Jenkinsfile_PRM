@@ -16,7 +16,7 @@ pipeline {
             }
 
             steps {
-
+                echo "CurrentBuild Current Result: " + currentBuild.currentResult   
                 echo "HELLO"             
             }
         }  

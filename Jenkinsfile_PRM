@@ -19,20 +19,18 @@ pipeline {
                     echo "CurrentBuild Current Result: " + currentBuild.currentResult   
                     echo "HELLO FROM PREPARTION STAGE"             
                 }
-        } 
+        }
 
-        when {
-                expression { currentBuild.currentResult == "SUCCESS" }
-        } 
-
-            stage('Test'){
+        stage('Test'){
                 
+            when {
+                    expression { currentBuild.currentResult == "SUCCESS" }
+            }                 
                 steps {
-
+                    
                     echo "CurrentBuild Current Result: " + currentBuild.currentResult   
                     echo "HELLO FROM TEST STAGE"
-
                 }
-            }
+        }
     } 
 }
